@@ -1,9 +1,6 @@
 use rand::Rng;
 use std::cmp::Ordering;
 use std::collections::HashMap;
-// use std::vec::sort;
-
-// use std::vec;
 
 fn main() {
     let mut rnd = rand::thread_rng();

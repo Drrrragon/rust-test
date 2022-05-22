@@ -3,7 +3,7 @@ use std::time::Instant;
 
 fn main() {
     let mut now = Instant::now();
-    let number = 30;
+    let number = 50;
     println!("Optimized fibo function");
     println!("{}", lets_fibo(number));
     println!("{:.2?}", now.elapsed());
@@ -22,7 +22,7 @@ fn lets_fibo(number: u64) -> u64 {
     let number: usize = number.try_into().unwrap();
     while ptr < number {
         let ptr_u: usize = ptr.try_into().unwrap();
-        vector.push(vector[ptr_u -2] + vector[ptr_u -1]);
+        vector.push(*vector.get(ptr_u -1).unwrap() + *vector.get(ptr_u -2).unwrap());
         ptr += 1;
     }  
     return vector[vector.len()-1];
